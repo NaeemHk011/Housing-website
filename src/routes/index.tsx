@@ -18,9 +18,9 @@ import { EkgLine } from "@/components/EkgLine";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Advantaged Medical Solutions — Housing & Homecare | Spring TX" },
+      { title: "Advantaged Medical Solutions   Housing & Homecare | Spring TX" },
       { name: "description", content: "Safe, supportive & affordable shared housing for veterans and independent adults in Spring, Texas. Move-in ready, all utilities paid, drug-free environment." },
-      { property: "og:title", content: "Advantaged Medical Solutions — Housing & Homecare" },
+      { property: "og:title", content: "Advantaged Medical Solutions   Housing & Homecare" },
       { property: "og:description", content: "Safe, supportive housing for veterans and independent adults in Spring, Texas." },
     ],
     links: [
@@ -111,7 +111,7 @@ function Hero() {
           transition={{ delay: 0.15 }}
           className="mx-auto mt-6 max-w-2xl text-base text-white/90 md:text-lg"
         >
-          For Veterans & Independent Adults — 24624 I-45, Suite 200, Spring, Texas 77386.
+          For Veterans & Independent Adults   24624 I-45, Suite 200, Spring, Texas 77386.
           Move-in ready homes with all utilities included.
         </motion.p>
         <motion.div
@@ -208,7 +208,7 @@ function About() {
 function Services() {
   const items = [
     { icon: Bed, title: "Private & Semi-Private Rooms", desc: "Choose the room arrangement that fits your lifestyle and comfort." },
-    { icon: Tv, title: "Fully Furnished", desc: "Beds, TVs, and quality furniture — everything you need on day one." },
+    { icon: Tv, title: "Fully Furnished", desc: "Beds, TVs, and quality furniture   everything you need on day one." },
     { icon: Wifi, title: "High-Speed WiFi", desc: "Stay connected with reliable internet throughout the home." },
     { icon: Shirt, title: "Laundry & Cleaning", desc: "On-site laundry and weekly cleaning to keep daily living simple." },
     { icon: Bus, title: "Transportation Assistance", desc: "Direct access to local transit and assistance with travel needs." },
@@ -408,7 +408,7 @@ function Contact() {
             </div>
             <div className="overflow-hidden rounded-2xl border border-border shadow-soft">
               <iframe
-                title="Map — 24624 I-45, Suite 200, Spring, Texas 77386"
+                title="Map   24624 I-45, Suite 200, Spring, Texas 77386"
                 src="https://maps.google.com/maps?q=24624%20I-45%2C%20Suite%20200%2C%20Spring%2C%20Texas%2077386&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 className="h-64 w-full"
                 loading="lazy"
