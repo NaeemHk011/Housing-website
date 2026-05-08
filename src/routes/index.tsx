@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   Bed, Wifi, Shirt, Trees, Bus, Check, Phone, Mail, MapPin,
-  ShieldCheck, Home, Tv, Sparkles, Menu, X, Facebook, Instagram, Send,
+  ShieldCheck, Home, Tv, Sparkles, Menu, X, Facebook, Send,
 } from "lucide-react";
 import logo from "@/assets/logo.jpeg";
 import heroHome from "@/assets/hero-home.jpg";
@@ -11,15 +11,17 @@ import aboutFacility from "@/assets/about-facility.jpg";
 import galBedroom from "@/assets/gallery-bedroom.jpg";
 import galKitchen from "@/assets/gallery-kitchen.jpg";
 import galLiving from "@/assets/gallery-living.jpg";
+import galBathroom from "@/assets/image7.jpeg";
+import galDining from "@/assets/image1.jpeg";
 import { EkgLine } from "@/components/EkgLine";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Advantaged Medical Solutions — Housing & Homecare | Houston TX" },
-      { name: "description", content: "Safe, supportive & affordable shared housing for veterans and independent adults in Spring Branch, Houston TX. Move-in ready, all utilities paid, drug-free environment." },
+      { title: "Advantaged Medical Solutions — Housing & Homecare | Spring TX" },
+      { name: "description", content: "Safe, supportive & affordable shared housing for veterans and independent adults in Spring, Texas. Move-in ready, all utilities paid, drug-free environment." },
       { property: "og:title", content: "Advantaged Medical Solutions — Housing & Homecare" },
-      { property: "og:description", content: "Safe, supportive housing for veterans and independent adults in Houston." },
+      { property: "og:description", content: "Safe, supportive housing for veterans and independent adults in Spring, Texas." },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -57,7 +59,7 @@ function Navbar() {
     <header className={`fixed inset-x-0 top-0 z-50 bg-white transition-all duration-300 ${scrolled ? "shadow-soft" : ""}`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
         <a href="#home" className="flex items-center gap-3">
-          <img src={logo} alt="Advantaged Medical Solutions logo" className="h-16 w-auto md:h-20" />
+          <img src={logo} alt="Advantaged Medical Solutions logo" className="h-10 w-auto md:h-14" />
         </a>
         <nav className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
@@ -97,12 +99,6 @@ function Hero() {
       <img src={heroHome} alt="Welcoming home at golden hour" className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
       <div className="relative z-10 mx-auto max-w-6xl px-6 pt-32 pb-24 text-center md:pt-40">
-        <motion.div initial="hidden" animate="visible" variants={fadeUp}>
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-white backdrop-blur">
-            <span className="heartbeat-pulse h-1.5 w-1.5 rounded-full bg-accent" />
-            Houston, TX 77055
-          </span>
-        </motion.div>
         <motion.h1
           initial="hidden" animate="visible" variants={fadeUp}
           className="mt-6 font-display text-4xl font-bold leading-tight text-white sm:text-5xl md:text-7xl"
@@ -115,7 +111,7 @@ function Hero() {
           transition={{ delay: 0.15 }}
           className="mx-auto mt-6 max-w-2xl text-base text-white/90 md:text-lg"
         >
-          For Veterans & Independent Adults — Spring Branch, Houston TX 77055.
+          For Veterans & Independent Adults — 24624 I-45, Suite 200, Spring, Texas 77386.
           Move-in ready homes with all utilities included.
         </motion.p>
         <motion.div
@@ -164,7 +160,7 @@ function About() {
     { label: "Move-In Ready", icon: Home },
     { label: "All Utilities Paid", icon: Sparkles },
     { label: "Drug-Free Environment", icon: ShieldCheck },
-    { label: "Bus Line #26 & #58", icon: Bus },
+    { label: "Safe & Supportive", icon: Check },
   ];
   return (
     <section id="about" className="bg-background py-24 md:py-32">
@@ -177,9 +173,9 @@ function About() {
             </h2>
             <p className="mt-6 text-base leading-relaxed text-muted-foreground md:text-lg">
               Advantaged Medical Solutions provides safe, drug-free, supportive shared living
-              for veterans, honorably discharged individuals, and independent adults. Every
-              residence is move-in ready with all utilities included — so you can focus on
-              what matters most.
+              for veterans, those at risk of homelessness, honorably discharged individuals, and independent adults. Every
+              residence is move-in ready with all utilities included, so you can focus on
+              recovery, independence, and peace of mind.
             </p>
             <div className="mt-8 grid grid-cols-2 gap-4">
               {stats.map((s) => (
@@ -214,9 +210,9 @@ function Services() {
     { icon: Bed, title: "Private & Semi-Private Rooms", desc: "Choose the room arrangement that fits your lifestyle and comfort." },
     { icon: Tv, title: "Fully Furnished", desc: "Beds, TVs, and quality furniture — everything you need on day one." },
     { icon: Wifi, title: "High-Speed WiFi", desc: "Stay connected with reliable internet throughout the home." },
-    { icon: Shirt, title: "Laundry Services", desc: "On-site laundry to keep daily living simple and convenient." },
-    { icon: Trees, title: "Private Fenced Backyard", desc: "Quiet outdoor space to relax, garden, or enjoy fresh Texas air." },
-    { icon: Bus, title: "Transportation Assistance", desc: "Direct access to Bus Line #26 & #58 — appointments made easy." },
+    { icon: Shirt, title: "Laundry & Cleaning", desc: "On-site laundry and weekly cleaning to keep daily living simple." },
+    { icon: Bus, title: "Transportation Assistance", desc: "Direct access to local transit and assistance with travel needs." },
+    { icon: ShieldCheck, title: "24/7 Oversight", desc: "A drug-free environment with round-the-clock safety and supervision." },
   ];
   return (
     <section id="services" className="relative bg-secondary/40 py-24 md:py-32">
@@ -246,12 +242,12 @@ function Services() {
 
 function Eligibility() {
   const items = [
-    "Independent Adults",
-    "Age 62 and Up",
-    "Veterans (Honorably Discharged)",
-    "Males & Females",
-    "Independent Lifestyle",
-    "Re-entry (Accepted)",
+    "Independent Adults (Age 62+)",
+    "Veterans (At Risk of Homelessness)",
+    "Domestic & Re-entry Situations",
+    "Physical & Mental Disabilities",
+    "Males & Females Welcome",
+    "SSI, SSDI, VA & Private Pay",
   ];
   return (
     <section className="bg-background py-24 md:py-32">
@@ -285,9 +281,11 @@ function Eligibility() {
 
 function Gallery() {
   const photos = [
-    { src: galBedroom, label: "Shared Bedroom", className: "lg:row-span-2 lg:col-span-1" },
-    { src: galKitchen, label: "Modern Kitchen", className: "" },
-    { src: galLiving, label: "Living Room", className: "lg:col-span-1" },
+    { src: galBedroom, label: "Shared Bedroom", sub: "Comfortable, furnished spaces for rest and privacy.", className: "lg:row-span-2 lg:col-span-1" },
+    { src: galKitchen, label: "Modern Kitchen", sub: "Fully equipped for meal preparation and storage.", className: "" },
+    { src: galLiving, label: "Living Room", sub: "Spacious common areas for relaxation and socializing.", className: "lg:col-span-1" },
+    { src: galBathroom, label: "Dining Area", sub: "Bright and welcoming space for shared meals.", className: "" },
+    { src: galDining, label: "Modern Bathroom", sub: "Clean, accessible, and well-maintained facilities.", className: "" },
   ];
   return (
     <section id="gallery" className="bg-secondary/40 py-24 md:py-32">
@@ -304,8 +302,8 @@ function Gallery() {
               <img src={p.src} alt={p.label} loading="lazy" className="gallery-img h-full w-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent opacity-90" />
               <div className="absolute bottom-0 left-0 p-6">
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">View</span>
                 <h3 className="font-display text-2xl font-bold text-white">{p.label}</h3>
+                <p className="mt-1 text-sm text-white/80">{p.sub}</p>
               </div>
             </motion.div>
           ))}
@@ -349,7 +347,7 @@ function Contact() {
   return (
     <section id="contact" className="bg-background py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
-        <SectionHeading eyebrow="Apply / Contact" title="Take the first step home." sub="Reach out today — we'll guide you through every step of the application process." />
+        <SectionHeading eyebrow="Apply / Contact" title="Take the first step home." sub="Reach out today - we'll guide you through every step of the application process." />
         <div className="mt-16 grid gap-10 lg:grid-cols-2">
           <motion.form
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
@@ -389,36 +387,29 @@ function Contact() {
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/30 text-accent transition group-hover:bg-primary"><Phone className="h-5 w-5" /></div>
                   <div>
                     <div className="text-xs uppercase tracking-wider text-white/60">Call / Text</div>
-                    <div className="text-base font-semibold">832-800-4150</div>
+                    <div className="text-base font-semibold">Office# 832-800-4150</div>
                   </div>
                 </a>
-                <a href="mailto:AMSverifen@gmail.com" className="group flex items-start gap-4">
+                <a href="mailto:AMSverifies@gmail.com" className="group flex items-start gap-4">
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/30 text-accent transition group-hover:bg-primary"><Mail className="h-5 w-5" /></div>
                   <div>
                     <div className="text-xs uppercase tracking-wider text-white/60">Email</div>
-                    <div className="text-base font-semibold break-all">AMSverifen@gmail.com</div>
+                    <div className="text-base font-semibold break-all">AMSverifies@gmail.com</div>
                   </div>
                 </a>
                 <div className="flex items-start gap-4">
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/30 text-accent"><MapPin className="h-5 w-5" /></div>
                   <div>
                     <div className="text-xs uppercase tracking-wider text-white/60">Location</div>
-                    <div className="text-base font-semibold">Spring Branch, Houston TX 77055</div>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/30 text-accent"><Bus className="h-5 w-5" /></div>
-                  <div>
-                    <div className="text-xs uppercase tracking-wider text-white/60">Transit</div>
-                    <div className="text-base font-semibold">Bus Line #26 & #58</div>
+                    <div className="text-base font-semibold">24624 I-45, Suite 200, Spring, Texas 77386</div>
                   </div>
                 </div>
               </div>
             </div>
             <div className="overflow-hidden rounded-2xl border border-border shadow-soft">
               <iframe
-                title="Map — Spring Branch, Houston TX 77055"
-                src="https://www.google.com/maps?q=Spring+Branch+Houston+TX+77055&output=embed"
+                title="Map — 24624 I-45, Suite 200, Spring, Texas 77386"
+                src="https://maps.google.com/maps?q=24624%20I-45%2C%20Suite%20200%2C%20Spring%2C%20Texas%2077386&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 className="h-64 w-full"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -444,14 +435,15 @@ function Footer() {
           ))}
         </nav>
         <div className="flex justify-center gap-4 md:justify-end">
-          <a href="#" aria-label="Facebook" className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition hover:border-accent hover:text-accent"><Facebook className="h-4 w-4" /></a>
-          <a href="#" aria-label="Instagram" className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition hover:border-accent hover:text-accent"><Instagram className="h-4 w-4" /></a>
+          <a href="https://www.facebook.com/CamlerMedical/?_rdc=1&_rdr" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition hover:border-accent hover:text-accent"><Facebook className="h-4 w-4" /></a>
         </div>
       </div>
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 py-6 text-center text-sm md:flex-row md:text-left">
           <p className="font-display italic text-accent">Empowering lives, one step at a time.</p>
-          <p className="text-white/50">© 2025 Advantaged Medical Solutions. All rights reserved.</p>
+          <p className="text-white/50">
+            Powered By <a href="https://axistechgroup.com/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">AxisTechGroup</a>
+          </p>
         </div>
       </div>
     </footer>
