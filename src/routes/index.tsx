@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
-  Bed, Sofa, Wifi, Shirt, Trees, Bus, Check, Phone, Mail, MapPin,
+  Bed, Wifi, Shirt, Trees, Bus, Check, Phone, Mail, MapPin,
   ShieldCheck, Home, Tv, Sparkles, Menu, X, Facebook, Instagram, Send,
 } from "lucide-react";
 import logo from "@/assets/logo.jpeg";
@@ -478,6 +478,3 @@ function Index() {
   );
 }
 
-import type { LucideIcon } from "lucide-react";
-// silence unused: Sofa kept available for future use
-void Sofa as unknown as LucideIcon;
