@@ -54,10 +54,10 @@ function Navbar() {
   ];
 
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur shadow-soft" : "bg-white/80 backdrop-blur-sm"}`}>
+    <header className={`fixed inset-x-0 top-0 z-50 bg-white transition-all duration-300 ${scrolled ? "shadow-soft" : ""}`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
         <a href="#home" className="flex items-center gap-3">
-          <img src={logo} alt="Advantaged Medical Solutions logo" className="h-12 w-auto md:h-14" />
+          <img src={logo} alt="Advantaged Medical Solutions logo" className="h-16 w-auto md:h-20" />
         </a>
         <nav className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
