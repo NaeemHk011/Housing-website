@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   Bed, Wifi, Shirt, Trees, Bus, Check, Phone, Mail, MapPin,
-  ShieldCheck, Home, Tv, Sparkles, Menu, X, Facebook, Send,
+  ShieldCheck, Home, Tv, Sparkles, Menu, X, Send,
 } from "lucide-react";
 import logo from "@/assets/logo.jpeg";
 import heroHome from "@/assets/hero-home.jpg";
@@ -433,7 +433,7 @@ function Contact() {
 function Footer() {
   return (
     <footer className="bg-charcoal text-white/80">
-      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-3 md:items-center">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-10 px-6 py-14 md:flex-row">
         <div className="flex items-center gap-3">
           <img src={logo} alt="Advantaged Medical Solutions" className="h-14 w-auto rounded bg-white p-1" />
         </div>
@@ -442,9 +442,6 @@ function Footer() {
             <a key={l} href={`#${l.toLowerCase()}`} className="transition hover:text-accent">{l}</a>
           ))}
         </nav>
-        <div className="flex justify-center gap-4 md:justify-end">
-          <a href="https://www.facebook.com/CamlerMedical/?_rdc=1&_rdr" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition hover:border-accent hover:text-accent"><Facebook className="h-4 w-4" /></a>
-        </div>
       </div>
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 py-6 text-center text-sm md:flex-row md:text-left">
