@@ -13,7 +13,7 @@ import galKitchen from "@/assets/gallery-kitchen.jpg";
 import galLiving from "@/assets/gallery-living.jpg";
 import galBathroom from "@/assets/image7.jpeg";
 import galDining from "@/assets/image1.jpeg";
-import { EkgLine } from "@/components/EkgLine";
+// import { EkgLine } from "@/components/EkgLine";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -111,7 +111,7 @@ function Hero() {
           transition={{ delay: 0.15 }}
           className="mx-auto mt-6 max-w-2xl text-base text-white/90 md:text-lg"
         >
-          For Veterans & Independent Adults   24624 I-45, Suite 200, Spring, Texas 77386.
+          For Veterans & Independent Adults.
           Move-in ready homes with all utilities included.
         </motion.p>
         <motion.div
@@ -126,10 +126,18 @@ function Hero() {
             Learn More
           </a>
         </motion.div>
+        <motion.div
+          initial="hidden" animate="visible" variants={fadeUp}
+          transition={{ delay: 0.45 }}
+          className="mt-6 inline-block rounded-full bg-accent/20 border border-accent px-7 py-2 text-sm font-bold tracking-wider text-accent uppercase"
+        >
+          We Are Income Based 
+        </motion.div>
       </div>
-      <div className="absolute inset-x-0 bottom-0 z-10">
-        <EkgLine className="h-16 w-full text-accent" color="currentColor" />
-      </div>
+      
+      {/* <div className="absolute inset-x-0 bottom-0 z-10"> */}
+        {/* <EkgLine className="h-16 w-full text-accent" color="currentColor" /> */}
+      {/* </div> */}
     </section>
   );
 }
@@ -137,7 +145,7 @@ function Hero() {
 function Divider() {
   return (
     <div className="mx-auto my-2 max-w-3xl px-6 text-primary/60">
-      <EkgLine className="mx-auto h-8 w-full" />
+      {/* <EkgLine className="mx-auto h-8 w-full" /> */}
     </div>
   );
 }
@@ -245,7 +253,7 @@ function Eligibility() {
     "Independent Adults (Age 62+)",
     "Veterans (At Risk of Homelessness)",
     "Domestic & Re-entry Situations",
-    "Physical & Mental Disabilities",
+    // "Physical & Mental Disabilities",
     "Males & Females Welcome",
     "SSI, SSDI, VA & Private Pay",
   ];
@@ -325,7 +333,7 @@ function AmenitiesBanner() {
   return (
     <section className="relative overflow-hidden bg-primary py-16 text-primary-foreground">
       <div className="absolute inset-0 opacity-20">
-        <EkgLine className="h-full w-full text-accent" />
+        {/* <EkgLine className="h-full w-full text-accent" /> */}
       </div>
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6">
@@ -381,7 +389,7 @@ function Contact() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="space-y-6">
             <div className="rounded-2xl bg-charcoal p-8 text-white shadow-elegant">
               <h3 className="font-display text-2xl font-bold">Get in touch</h3>
-              <p className="mt-2 text-sm text-white/70">We respond within one business day.</p>
+              <p className="mt-2 text-sm text-white/70">We respond quickly!</p>
               <div className="mt-6 space-y-5">
                 <a href="tel:8328004150" className="group flex items-start gap-4">
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/30 text-accent transition group-hover:bg-primary"><Phone className="h-5 w-5" /></div>
@@ -397,19 +405,19 @@ function Contact() {
                     <div className="text-base font-semibold break-all">AMSverifies@gmail.com</div>
                   </div>
                 </a>
-                <div className="flex items-start gap-4">
+                {/* <div className="flex items-start gap-4">
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/30 text-accent"><MapPin className="h-5 w-5" /></div>
                   <div>
                     <div className="text-xs uppercase tracking-wider text-white/60">Location</div>
                     <div className="text-base font-semibold">24624 I-45, Suite 200, Spring, Texas 77386</div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="overflow-hidden rounded-2xl border border-border shadow-soft">
               <iframe
-                title="Map   24624 I-45, Suite 200, Spring, Texas 77386"
-                src="https://maps.google.com/maps?q=24624%20I-45%2C%20Suite%20200%2C%20Spring%2C%20Texas%2077386&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                title="Houston, Texas"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d644898.2022644485!2d-96.12073098076652!3d29.83564862936281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640b8b4488d8501%3A0xca0d02def365053b!2sHouston%2C%20TX%2C%20USA!5e1!3m2!1sen!2s!4v1778518054296!5m2!1sen!2s"
                 className="h-64 w-full"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
