@@ -388,8 +388,8 @@ function Contact() {
           </motion.form>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="space-y-6">
             <div className="rounded-2xl bg-charcoal p-8 text-white shadow-elegant">
-              <h3 className="font-display text-2xl font-bold">Get in touch</h3>
-              <p className="mt-2 text-sm text-white/70">We respond quickly!</p>
+              <h3 className="font-display text-xl font-bold">We respond quickly!</h3>
+              {/* <p className="mt-2 text-sm text-white/70">We respond quickly!</p> */}
               <div className="mt-6 space-y-5">
                 <a href="tel:8328004150" className="group flex items-start gap-4">
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/30 text-accent transition group-hover:bg-primary"><Phone className="h-5 w-5" /></div>
@@ -405,13 +405,13 @@ function Contact() {
                     <div className="text-base font-semibold break-all">AMSverifies@gmail.com</div>
                   </div>
                 </a>
-                {/* <div className="flex items-start gap-4">
+                <div className="flex items-start gap-4">
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/30 text-accent"><MapPin className="h-5 w-5" /></div>
                   <div>
                     <div className="text-xs uppercase tracking-wider text-white/60">Location</div>
-                    <div className="text-base font-semibold">24624 I-45, Suite 200, Spring, Texas 77386</div>
+                    <div className="text-base font-semibold">Serving Houston, Texas</div>
                   </div>
-                </div> */}
+                </div>
               </div>
             </div>
             <div className="overflow-hidden rounded-2xl border border-border shadow-soft">
