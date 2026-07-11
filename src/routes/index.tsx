@@ -5,14 +5,15 @@ import {
   Bed, Wifi, Shirt, Trees, Bus, Check, Phone, Mail, MapPin,
   ShieldCheck, Home, Tv, Sparkles, Menu, X, Send,
 } from "lucide-react";
-import logo from "@/assets/logo.jpeg";
-import heroHome from "@/assets/hero-home.jpg";
-import aboutFacility from "@/assets/about-facility.jpg";
-import galBedroom from "@/assets/gallery-bedroom.jpg";
-import galKitchen from "@/assets/gallery-kitchen.jpg";
-import galLiving from "@/assets/gallery-living.jpg";
-import galBathroom from "@/assets/image7.jpeg";
-import galDining from "@/assets/image1.jpeg";
+import logoDark from "@/assets/logo-dark.png";
+import logoWhite from "@/assets/logo-white.png";
+import heroHome from "@/assets/house-exterior.jpeg";
+import aboutCommunity from "@/assets/about-community.jpeg";
+import galTeam from "@/assets/team-photo.jpeg";
+import galCare from "@/assets/care-support.jpeg";
+import galKitchen from "@/assets/kitchen.jpeg";
+import galLiving from "@/assets/living-room.jpeg";
+import galHomecare from "@/assets/homecare.jpeg";
 // import { EkgLine } from "@/components/EkgLine";
 
 export const Route = createFileRoute("/")({
@@ -51,7 +52,9 @@ function Navbar() {
     { label: "Home", href: "#home" },
     { label: "About", href: "#about" },
     { label: "Services", href: "#services" },
+    { label: "Programs", href: "#programs" },
     { label: "Gallery", href: "#gallery" },
+    { label: "Goals", href: "#goals" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -59,7 +62,7 @@ function Navbar() {
     <header className={`fixed inset-x-0 top-0 z-50 bg-white transition-all duration-300 ${scrolled ? "shadow-soft" : ""}`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
         <a href="#home" className="flex items-center gap-3">
-          <img src={logo} alt="Advantaged Medical Solutions logo" className="h-10 w-auto md:h-14" />
+          <img src={logoDark} alt="Advantaged Medical Solutions logo" className="h-7 w-auto md:h-10" />
         </a>
         <nav className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
@@ -165,10 +168,10 @@ function SectionHeading({ eyebrow, title, sub }: { eyebrow: string; title: strin
 
 function About() {
   const stats = [
-    { label: "Move-In Ready", icon: Home },
-    { label: "All Utilities Paid", icon: Sparkles },
-    { label: "Drug-Free Environment", icon: ShieldCheck },
-    { label: "Safe & Supportive", icon: Check },
+    { label: "Family-Owned Agency", icon: Home },
+    { label: "Founded by Medical Professionals", icon: Sparkles },
+    { label: "Safe & Inclusive Environment", icon: ShieldCheck },
+    { label: "IDD-Focused Care", icon: Check },
   ];
   return (
     <section id="about" className="bg-background py-24 md:py-32">
@@ -177,13 +180,16 @@ function About() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Who We Are</span>
             <h2 className="mt-3 font-display text-3xl font-bold text-charcoal md:text-5xl">
-              A home where dignity meets care.
+              A safe, clean & inclusive environment.
             </h2>
             <p className="mt-6 text-base leading-relaxed text-muted-foreground md:text-lg">
-              Advantaged Medical Solutions provides safe, drug-free, supportive shared living
-              for veterans, those at risk of homelessness, honorably discharged individuals, and independent adults. Every
-              residence is move-in ready with all utilities included, so you can focus on
-              recovery, independence, and peace of mind.
+              AMS Housing & Homecare is a privately-operated and locally owned agency in Houston, Texas, fully capable of meeting the changing needs of individuals with intellectual and developmental disabilities.
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
+              As a family-owned organization founded by two medical professionals, our goal is to provide individuals with disabilities a safe, clean, and inclusive environment. We take pride in providing quality residential services to the developmentally disabled population.
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
+              We are committed to working with individuals with diagnoses ranging from medically fragile, mild to profound intellectual disabilities, varied mood and personality disorders, autism, dual-diagnosed individuals, and those with linkage to the juvenile and adult justice system as well as state hospitals.
             </p>
             <div className="mt-8 grid grid-cols-2 gap-4">
               {stats.map((s) => (
@@ -199,8 +205,8 @@ function About() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="relative">
             <div className="absolute -left-4 -top-4 h-full w-full rounded-2xl border-2 border-primary/30" aria-hidden />
             <img
-              src={aboutFacility}
-              alt="Our facility with private fenced backyard"
+              src={aboutCommunity}
+              alt="Individuals with disabilities enjoying time together"
               className="relative h-full w-full rounded-2xl object-cover shadow-elegant"
               loading="lazy"
               width={1280}
@@ -214,35 +220,189 @@ function About() {
 }
 
 function Services() {
-  const items = [
-    { icon: Bed, title: "Private & Semi-Private Rooms", desc: "Choose the room arrangement that fits your lifestyle and comfort." },
-    { icon: Tv, title: "Fully Furnished", desc: "Beds, TVs, and quality furniture   everything you need on day one." },
-    { icon: Wifi, title: "High-Speed WiFi", desc: "Stay connected with reliable internet throughout the home." },
-    { icon: Shirt, title: "Laundry & Cleaning", desc: "On-site laundry and weekly cleaning to keep daily living simple." },
-    { icon: Bus, title: "Transportation Assistance", desc: "Direct access to local transit and assistance with travel needs." },
-    { icon: ShieldCheck, title: "24/7 Oversight", desc: "A drug-free environment with round-the-clock safety and supervision." },
+  const provides = [
+    "Nursing / LPN Services",
+    "Personal / Private Room",
+    "Personal / Private Bathroom",
+    "Dining Area",
+    "Protective Care and Watchful Oversight",
+    "Supervision of Personal Care",
+    "Supervision of Medication and Nutrition",
+    "Assistance with Grooming and Personal Hygiene",
+    "Living Room and Visitor's Area",
+    "Telephone and Internet Connection / Wi-Fi",
+    "3 Balanced Meals and 2 Nutritious Snacks per day",
+    "Emergency and Non-Emergency Transportation",
+    "Life Skills Training, Recreational, Cultural Activities and Hobbies",
+    "Laundry Facilities",
+    "24 Hour Lodging",
   ];
+
   return (
     <section id="services" className="relative bg-secondary/40 py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
-        <SectionHeading eyebrow="What We Offer" title="Everything you need, included." sub="Thoughtfully equipped homes designed for comfort, independence and peace of mind." />
-        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {items.map((s, i) => (
-            <motion.div
-              key={s.title}
-              initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={fadeUp}
-              transition={{ delay: i * 0.05 }}
-              className="group relative overflow-hidden rounded-2xl border border-border bg-card p-8 shadow-soft transition hover:-translate-y-1 hover:shadow-elegant"
-            >
-              <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-primary text-primary-foreground transition group-hover:scale-110">
-                <s.icon className="h-7 w-7" />
-              </div>
-              <h3 className="font-display text-xl font-bold text-charcoal">{s.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
-              <div className="absolute -right-8 -bottom-8 h-32 w-32 rounded-full bg-accent/10 opacity-0 transition group-hover:opacity-100" />
-            </motion.div>
-          ))}
+        <SectionHeading eyebrow="What We Offer" title="Our Services" />
+
+        <motion.div
+          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+          className="mx-auto mt-8 max-w-4xl rounded-2xl border border-border bg-card p-8 shadow-soft"
+        >
+          <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
+            AMS Housing &amp; Homecare Community Access Services are designed to help participants acquire, retain or improve self-help, socialization and adaptive skills. Services for those individuals that would like, or need, more independence services are designed to meet the individual's independent needs.
+          </p>
+          <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
+            These services can include a wide variety of community-based activities, with one-on-one staff and services provided to groups of individuals. These services allow individuals with disabilities more access to participate in the activities of their choice, in their own community    with the ability to live a more independent and productive life.
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+          className="mx-auto mt-12 max-w-4xl"
+        >
+          <h3 className="font-display text-2xl font-bold text-primary mb-6">We Provide:</h3>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {provides.map((item, i) => (
+              <motion.div
+                key={item}
+                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+                transition={{ delay: i * 0.04 }}
+                className="flex items-center gap-3 rounded-xl border border-border bg-card px-5 py-3.5 shadow-soft"
+              >
+                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                  <Check className="h-4 w-4" strokeWidth={3} />
+                </div>
+                <span className="text-sm font-medium text-charcoal">{item}</span>
+              </motion.div>
+            ))}
+          </div>
+          <motion.p
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+            className="mt-8 text-center text-sm font-medium text-muted-foreground"
+          >
+            Would you like a tour of one of our residential settings?{" "}
+            <a href="#contact" className="font-semibold text-primary hover:underline">
+              Call 832-301-8241 to set up an appointment today!
+            </a>
+          </motion.p>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function WaiverPrograms() {
+  const hcsServices = [
+    "Residential Services – Group Home",
+    "Host Home / Companion Care",
+    "Respite Services",
+    "Day Habilitation",
+    "Employment Services",
+    "Nursing Services",
+    "Dental Services",
+    "Behavioral Support",
+    "Supported Home Living (Transportation)",
+    "Social Work",
+    "Occupational Therapy",
+    "Physical Therapy",
+    "Speech Therapy",
+    "Dietary Services",
+    "Audiology Services",
+    "Cognitive Rehabilitation Services",
+    "Accessible Minor Home Modifications",
+    "Adaptive Aids",
+    "Transition Assistance Services",
+  ];
+
+  const txhmlServices = [
+    "Day Habilitation",
+    "Respite Services",
+    "Employment Services",
+    "Nursing Services",
+    "Dental Services",
+    "Behavioral Support",
+    "Community Support (Transportation)",
+    "Occupational Therapy",
+    "Physical Therapy",
+    "Speech Therapy",
+    "Audiology Services",
+    "Dietary Services",
+    "Minor Home Modifications",
+    "Adaptive Aid",
+  ];
+
+  return (
+    <section id="programs" className="bg-background py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-6">
+        <SectionHeading
+          eyebrow="Waiver Programs"
+          title="Programs We Serve"
+          sub="We are proud to support individuals through Texas HCS and TXHmL Medicaid waiver programs."
+        />
+        <div className="mt-16 grid gap-8 lg:grid-cols-2">
+          {/* HCS Card */}
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={fadeUp}
+            className="rounded-2xl border-2 border-primary/20 bg-card shadow-elegant overflow-hidden"
+          >
+            <div className="bg-primary px-8 py-5">
+              <h3 className="font-display text-2xl font-bold text-primary-foreground">HCS</h3>
+              <p className="mt-1 text-sm text-primary-foreground/80">Home and Community-based Services</p>
+            </div>
+            <ul className="divide-y divide-border">
+              {hcsServices.map((service, i) => (
+                <motion.li
+                  key={service}
+                  initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+                  transition={{ delay: i * 0.03 }}
+                  className="flex items-center gap-3 px-8 py-3.5"
+                >
+                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <Check className="h-3.5 w-3.5" strokeWidth={3} />
+                  </div>
+                  <span className="text-sm font-medium text-charcoal">{service}</span>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* TXHmL Card */}
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={fadeUp}
+            transition={{ delay: 0.1 }}
+            className="rounded-2xl border-2 border-accent/30 bg-card shadow-elegant overflow-hidden"
+          >
+            <div className="bg-accent px-8 py-5">
+              <h3 className="font-display text-2xl font-bold text-charcoal">TXHmL</h3>
+              <p className="mt-1 text-sm text-charcoal/70">Texas Home and Living Waiver</p>
+            </div>
+            <ul className="divide-y divide-border">
+              {txhmlServices.map((service, i) => (
+                <motion.li
+                  key={service}
+                  initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+                  transition={{ delay: i * 0.03 }}
+                  className="flex items-center gap-3 px-8 py-3.5"
+                >
+                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent/20 text-charcoal">
+                    <Check className="h-3.5 w-3.5" strokeWidth={3} />
+                  </div>
+                  <span className="text-sm font-medium text-charcoal">{service}</span>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
+
+        <motion.p
+          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+          className="mt-10 text-center text-sm text-muted-foreground"
+        >
+          Have waiver services?{" "}
+          <a href="#contact" className="font-semibold text-primary hover:underline">
+            Contact us today
+          </a>{" "}
+          to establish services with AMS Housing &amp; Homecare.
+        </motion.p>
       </div>
     </section>
   );
@@ -289,11 +449,11 @@ function Eligibility() {
 
 function Gallery() {
   const photos = [
-    { src: galBedroom, label: "Shared Bedroom", sub: "Comfortable, furnished spaces for rest and privacy.", className: "lg:row-span-2 lg:col-span-1" },
+    { src: galHomecare, label: "Homecare Services", sub: "Compassionate one-on-one care in a warm, supportive environment.", className: "lg:row-span-2 lg:col-span-1" },
     { src: galKitchen, label: "Modern Kitchen", sub: "Fully equipped for meal preparation and storage.", className: "" },
     { src: galLiving, label: "Living Room", sub: "Spacious common areas for relaxation and socializing.", className: "lg:col-span-1" },
-    { src: galBathroom, label: "Dining Area", sub: "Bright and welcoming space for shared meals.", className: "" },
-    { src: galDining, label: "Modern Bathroom", sub: "Clean, accessible, and well-maintained facilities.", className: "" },
+    { src: galCare, label: "Personal Care Support", sub: "Dedicated staff providing daily living assistance.", className: "" },
+    { src: galTeam, label: "Our Team", sub: "Proudly serving the community alongside Texas Health and Human Services.", className: "" },
   ];
   return (
     <section id="gallery" className="bg-secondary/40 py-24 md:py-32">
@@ -351,11 +511,65 @@ function AmenitiesBanner() {
   );
 }
 
+function OurGoals() {
+  const goals = [
+    {
+      icon: Sparkles,
+      title: "Foster Learning & Self-Sufficiency",
+      desc: "We strive to create an environment that fosters learning and self-sufficiency for every individual in our care.",
+    },
+    {
+      icon: Home,
+      title: "Maximum Independence",
+      desc: "Our ultimate goal is to support adults with developmental disabilities in their pursuit of developing life skills, interests, and maximum independence.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Knowledgeable & Caring Staff",
+      desc: "Our knowledgeable staff have taken into consideration all concerns in the process of developing and designing care services which we now offer to our individuals.",
+    },
+  ];
+
+  return (
+    <section id="goals" className="bg-primary py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-6">
+        <motion.div
+          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+          className="mx-auto max-w-3xl text-center"
+        >
+          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-accent">Our Mission</span>
+          <h2 className="mt-3 font-display text-3xl font-bold text-white md:text-5xl">Our Goals</h2>
+          <p className="mt-4 text-base text-white/80 md:text-lg">
+            Everything we do is driven by a commitment to dignity, growth, and independence.
+          </p>
+        </motion.div>
+
+        <div className="mt-16 grid gap-8 md:grid-cols-3">
+          {goals.map((g, i) => (
+            <motion.div
+              key={g.title}
+              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+              transition={{ delay: i * 0.1 }}
+              className="rounded-2xl border border-white/20 bg-white/10 p-8 backdrop-blur"
+            >
+              <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-accent text-charcoal">
+                <g.icon className="h-7 w-7" />
+              </div>
+              <h3 className="font-display text-xl font-bold text-white">{g.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-white/75">{g.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Contact() {
   return (
     <section id="contact" className="bg-background py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
-        <SectionHeading eyebrow="Apply / Contact" title="Take the first step home." sub="Reach out today - we'll guide you through every step of the application process." />
+        <SectionHeading eyebrow="Get In Touch" title="Contact Us" sub="If you have waiver services and would like to establish services with AMS Housing & Homecare, please contact our administrative staff below." />
         <div className="mt-16 grid gap-10 lg:grid-cols-2">
           <motion.form
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
@@ -387,32 +601,65 @@ function Contact() {
             </div>
           </motion.form>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="space-y-6">
-            <div className="rounded-2xl bg-charcoal p-8 text-white shadow-elegant">
-              <h3 className="font-display text-xl font-bold">We respond quickly!</h3>
-              {/* <p className="mt-2 text-sm text-white/70">We respond quickly!</p> */}
-              <div className="mt-6 space-y-5">
-                <a href="tel:8328004150" className="group flex items-start gap-4">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/30 text-accent transition group-hover:bg-primary"><Phone className="h-5 w-5" /></div>
-                  <div>
-                    <div className="text-xs uppercase tracking-wider text-white/60">Call / Text</div>
-                    <div className="text-base font-semibold">Office# 832-800-4150</div>
+            <div className="rounded-2xl bg-charcoal p-8 text-white shadow-elegant space-y-6">
+
+              {/* Rajaul King */}
+              <div className="rounded-xl bg-white/10 p-5">
+                <p className="text-xs uppercase tracking-wider text-white/60 mb-1">Director of Operations</p>
+                <p className="font-display text-lg font-bold text-accent">Rajaul King</p>
+                <a href="tel:8323018241" className="group mt-3 flex items-center gap-3">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/30 text-accent transition group-hover:bg-primary">
+                    <Phone className="h-4 w-4" />
                   </div>
+                  <span className="text-base font-semibold">832-301-8241</span>
                 </a>
-                <a href="mailto:AMSverifies@gmail.com" className="group flex items-start gap-4">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/30 text-accent transition group-hover:bg-primary"><Mail className="h-5 w-5" /></div>
-                  <div>
-                    <div className="text-xs uppercase tracking-wider text-white/60">Email</div>
-                    <div className="text-base font-semibold break-all">AMSverifies@gmail.com</div>
+              </div>
+
+              {/* Latoika King */}
+              <div className="rounded-xl bg-white/10 p-5">
+                <p className="text-xs uppercase tracking-wider text-white/60 mb-1">Assistant Director of Operations</p>
+                <p className="font-display text-lg font-bold text-accent">Latoika King</p>
+                <a href="tel:2488954326" className="group mt-3 flex items-center gap-3">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/30 text-accent transition group-hover:bg-primary">
+                    <Phone className="h-4 w-4" />
                   </div>
+                  <span className="text-base font-semibold">248-895-4326</span>
                 </a>
-                <div className="flex items-start gap-4">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/30 text-accent"><MapPin className="h-5 w-5" /></div>
-                  <div>
-                    <div className="text-xs uppercase tracking-wider text-white/60">Location</div>
-                    <div className="text-base font-semibold">Serving Houston, Texas</div>
-                  </div>
+              </div>
+
+              {/* Email */}
+              <a href="mailto:AMSverifies@gmail.com" className="group flex items-center gap-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/30 text-accent transition group-hover:bg-primary">
+                  <Mail className="h-5 w-5" />
+                </div>
+                <div>
+                  <div className="text-xs uppercase tracking-wider text-white/60">Email</div>
+                  <div className="text-base font-semibold break-all">AMSverifies@gmail.com</div>
+                </div>
+              </a>
+
+              {/* Website */}
+              <a href="https://www.advantagedmedicalsolutions.com" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/30 text-accent transition group-hover:bg-primary">
+                  <Sparkles className="h-5 w-5" />
+                </div>
+                <div>
+                  <div className="text-xs uppercase tracking-wider text-white/60">Website</div>
+                  <div className="text-base font-semibold">www.advantagedmedicalsolutions.com</div>
+                </div>
+              </a>
+
+              {/* Location */}
+              <div className="flex items-center gap-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/30 text-accent">
+                  <MapPin className="h-5 w-5" />
+                </div>
+                <div>
+                  <div className="text-xs uppercase tracking-wider text-white/60">Location</div>
+                  <div className="text-base font-semibold">Houston, Texas</div>
                 </div>
               </div>
+
             </div>
             <div className="overflow-hidden rounded-2xl border border-border shadow-soft">
               <iframe
@@ -435,10 +682,10 @@ function Footer() {
     <footer className="bg-charcoal text-white/80">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-10 px-6 py-14 md:flex-row">
         <div className="flex items-center gap-3">
-          <img src={logo} alt="Advantaged Medical Solutions" className="h-14 w-auto rounded bg-white p-1" />
+          <img src={logoWhite} alt="Advantaged Medical Solutions" className="h-10 w-auto" />
         </div>
         <nav className="flex flex-wrap justify-center gap-6 text-sm font-medium">
-          {["Home", "About", "Services", "Gallery", "Contact"].map((l) => (
+          {["Home", "About", "Services", "Programs", "Gallery", "Goals", "Contact"].map((l) => (
             <a key={l} href={`#${l.toLowerCase()}`} className="transition hover:text-accent">{l}</a>
           ))}
         </nav>
@@ -464,10 +711,12 @@ function Index() {
         <About />
         <Divider />
         <Services />
+        <WaiverPrograms />
         <Eligibility />
         <Divider />
         <Gallery />
         <AmenitiesBanner />
+        <OurGoals />
         <Contact />
       </main>
       <Footer />
