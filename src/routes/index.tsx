@@ -53,8 +53,8 @@ function Navbar() {
     { label: "About", href: "#about" },
     { label: "Services", href: "#services" },
     { label: "Programs", href: "#programs" },
-    { label: "Gallery", href: "#gallery" },
     { label: "Goals", href: "#goals" },
+    { label: "Gallery", href: "#gallery" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -696,7 +696,7 @@ function Footer() {
           <img src={logoWhite} alt="Advantaged Medical Solutions" className="h-10 w-auto" />
         </div>
         <nav className="flex flex-wrap justify-center gap-6 text-sm font-medium">
-          {["Home", "About", "Services", "Programs", "Gallery", "Goals", "Contact"].map((l) => (
+          {["Home", "About", "Services", "Programs", "Goals", "Gallery", "Contact"].map((l) => (
             <a key={l} href={`#${l.toLowerCase()}`} className="transition hover:text-accent">{l}</a>
           ))}
         </nav>
