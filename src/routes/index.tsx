@@ -102,6 +102,11 @@ function Hero() {
       <img src={heroHome} alt="Welcoming home at golden hour" className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
       <div className="relative z-10 mx-auto max-w-6xl px-6 pt-32 pb-24 text-center md:pt-40">
+        <motion.div initial="hidden" animate="visible" variants={fadeUp} className="flex justify-center">
+          <div className="rounded-2xl bg-black/30 px-6 py-4 backdrop-blur-md ring-1 ring-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
+            <img src={logoWhite} alt="Advantaged Medical Solutions" className="h-14 w-auto md:h-20 drop-shadow-lg" />
+          </div>
+        </motion.div>
         <motion.h1
           initial="hidden" animate="visible" variants={fadeUp}
           className="mt-6 font-display text-4xl font-bold leading-tight text-white sm:text-5xl md:text-7xl"
@@ -114,8 +119,8 @@ function Hero() {
           transition={{ delay: 0.15 }}
           className="mx-auto mt-6 max-w-2xl text-base text-white/90 md:text-lg"
         >
-          For Veterans & Independent Adults.
-          Move-in ready homes with all utilities included.
+          Safe, Supportive Housing &amp; HomeCare for individuals with disabilities.
+          MOVE-IN READY with all utilities included.
         </motion.p>
         <motion.div
           initial="hidden" animate="visible" variants={fadeUp}
@@ -128,13 +133,6 @@ function Hero() {
           <a href="#about" className="inline-flex items-center justify-center rounded-full border-2 border-white/80 bg-white/5 px-8 py-3.5 text-sm font-semibold text-white backdrop-blur transition hover:bg-white hover:text-charcoal">
             Learn More
           </a>
-        </motion.div>
-        <motion.div
-          initial="hidden" animate="visible" variants={fadeUp}
-          transition={{ delay: 0.45 }}
-          className="mt-6 inline-block rounded-full bg-accent/20 border border-accent px-7 py-2 text-sm font-bold tracking-wider text-accent uppercase"
-        >
-          We Are Income Based 
         </motion.div>
       </div>
       
@@ -419,44 +417,6 @@ function WaiverPrograms() {
   );
 }
 
-function Eligibility() {
-  const items = [
-    "Independent Adults (Age 62+)",
-    "Veterans (At Risk of Homelessness)",
-    "Domestic & Re-entry Situations",
-    // "Physical & Mental Disabilities",
-    "Males & Females Welcome",
-    "SSI, SSDI, VA & Private Pay",
-  ];
-  return (
-    <section className="bg-background py-24 md:py-32">
-      <div className="mx-auto max-w-5xl px-6">
-        <SectionHeading eyebrow="Who We Accept" title="Welcoming a community that thrives together." />
-        <div className="mt-14 grid gap-4 sm:grid-cols-2">
-          {items.map((item, i) => (
-            <motion.div
-              key={item}
-              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-              transition={{ delay: i * 0.05 }}
-              className="flex items-center gap-4 rounded-xl border border-border bg-card p-5 shadow-soft"
-            >
-              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                <Check className="h-5 w-5" strokeWidth={3} />
-              </div>
-              <span className="text-base font-medium text-charcoal">{item}</span>
-            </motion.div>
-          ))}
-        </div>
-        <motion.p
-          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-          className="mt-8 text-center text-sm font-medium text-muted-foreground"
-        >
-          We accept <span className="text-primary font-semibold">SSI</span>, <span className="text-primary font-semibold">SSDI</span>, <span className="text-primary font-semibold">Private Pay</span>, and <span className="text-primary font-semibold">VA Benefits</span>.
-        </motion.p>
-      </div>
-    </section>
-  );
-}
 
 function Gallery() {
   const photos = [
@@ -614,10 +574,10 @@ function Contact() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="space-y-6">
             <div className="rounded-2xl bg-charcoal p-8 text-white shadow-elegant space-y-6">
 
-              {/* Rajaul King */}
+              {/* RJ King */}
               <div className="rounded-xl bg-white/10 p-5">
                 <p className="text-xs uppercase tracking-wider text-white/60 mb-1">Director of Operations</p>
-                <p className="font-display text-lg font-bold text-accent">Rajaul King</p>
+                <p className="font-display text-lg font-bold text-accent">RJ King</p>
                 <a href="tel:8323018241" className="group mt-3 flex items-center gap-3">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/30 text-accent transition group-hover:bg-primary">
                     <Phone className="h-4 w-4" />
@@ -724,7 +684,6 @@ function Index() {
         <Services />
         <WaiverPrograms />
         <OurGoals />
-        <Eligibility />
         <Divider />
         <Gallery />
         <AmenitiesBanner />
