@@ -205,8 +205,8 @@ function About() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="relative">
             <div className="absolute -left-4 -top-4 h-full w-full rounded-2xl border-2 border-primary/30" aria-hidden />
             <img
-              src={aboutCommunity}
-              alt="Individuals with disabilities enjoying time together"
+              src={galTeam}
+              alt="AMS team at Texas Health and Human Services event"
               className="relative h-full w-full rounded-2xl object-cover shadow-elegant"
               loading="lazy"
               width={1280}
@@ -241,23 +241,33 @@ function Services() {
   return (
     <section id="services" className="relative bg-secondary/40 py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
-        <SectionHeading eyebrow="What We Offer" title="Our Services" />
+
+        {/* Title + Paragraph LEFT | Image RIGHT */}
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">What We Offer</span>
+            <h2 className="mt-3 font-display text-3xl font-bold text-charcoal md:text-5xl">Our Services</h2>
+            <p className="mt-6 text-base leading-relaxed text-muted-foreground md:text-lg">
+              AMS Housing &amp; Homecare Community Access Services are designed to help participants acquire, retain or improve self-help, socialization and adaptive skills. Services for those individuals that would like, or need, more independence services are designed to meet the individual's independent needs.
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
+              These services can include a wide variety of community-based activities, with one-on-one staff and services provided to groups of individuals. These services allow individuals with disabilities more access to participate in the activities of their choice, in their own community   with the ability to live a more independent and productive life.
+            </p>
+          </motion.div>
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="relative">
+            <div className="absolute -left-4 -top-4 h-full w-full rounded-2xl border-2 border-primary/30" aria-hidden />
+            <img
+              src={galCare}
+              alt="Caregiver providing personal support to an individual"
+              className="relative w-full max-h-[400px] rounded-2xl object-cover object-[center_25%] shadow-elegant"
+              loading="lazy"
+            />
+          </motion.div>
+        </div>
 
         <motion.div
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-          className="mx-auto mt-8 max-w-4xl rounded-2xl border border-border bg-card p-8 shadow-soft"
-        >
-          <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
-            AMS Housing &amp; Homecare Community Access Services are designed to help participants acquire, retain or improve self-help, socialization and adaptive skills. Services for those individuals that would like, or need, more independence services are designed to meet the individual's independent needs.
-          </p>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
-            These services can include a wide variety of community-based activities, with one-on-one staff and services provided to groups of individuals. These services allow individuals with disabilities more access to participate in the activities of their choice, in their own community    with the ability to live a more independent and productive life.
-          </p>
-        </motion.div>
-
-        <motion.div
-          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-          className="mx-auto mt-12 max-w-4xl"
+          className="mt-16"
         >
           <h3 className="font-display text-2xl font-bold text-primary mb-6">We Provide:</h3>
           <div className="grid gap-3 sm:grid-cols-2">
@@ -285,6 +295,7 @@ function Services() {
             </a>
           </motion.p>
         </motion.div>
+
       </div>
     </section>
   );
@@ -453,7 +464,7 @@ function Gallery() {
     { src: galKitchen, label: "Modern Kitchen", sub: "Fully equipped for meal preparation and storage.", className: "" },
     { src: galLiving, label: "Living Room", sub: "Spacious common areas for relaxation and socializing.", className: "lg:col-span-1" },
     { src: galCare, label: "Personal Care Support", sub: "Dedicated staff providing daily living assistance.", className: "" },
-    { src: galTeam, label: "Our Team", sub: "Proudly serving the community alongside Texas Health and Human Services.", className: "" },
+    { src: aboutCommunity, label: "Our Community", sub: "Empowering individuals with disabilities to live joyful, independent lives.", className: "" },
   ];
   return (
     <section id="gallery" className="bg-secondary/40 py-24 md:py-32">
@@ -712,11 +723,11 @@ function Index() {
         <Divider />
         <Services />
         <WaiverPrograms />
+        <OurGoals />
         <Eligibility />
         <Divider />
         <Gallery />
         <AmenitiesBanner />
-        <OurGoals />
         <Contact />
       </main>
       <Footer />
