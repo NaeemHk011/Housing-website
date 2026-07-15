@@ -14,6 +14,7 @@ import galCare from "@/assets/care-support.jpeg";
 import galKitchen from "@/assets/kitchen.jpeg";
 import galLiving from "@/assets/living-room.jpeg";
 import galHomecare from "@/assets/homecare.jpeg";
+import galleryVideo from "@/assets/gallery-video.mov";
 // import { EkgLine } from "@/components/EkgLine";
 
 export const Route = createFileRoute("/")({
@@ -420,9 +421,9 @@ function WaiverPrograms() {
 
 function Gallery() {
   const photos = [
-    { src: galHomecare, label: "Homecare Services", sub: "Compassionate one-on-one care in a warm, supportive environment.", className: "lg:row-span-2 lg:col-span-1" },
+    { src: galHomecare, label: "Homecare Services", sub: "Compassionate one-on-one care in a warm, supportive environment.", className: "row-span-2" },
     { src: galKitchen, label: "Modern Kitchen", sub: "Fully equipped for meal preparation and storage.", className: "" },
-    { src: galLiving, label: "Living Room", sub: "Spacious common areas for relaxation and socializing.", className: "lg:col-span-1" },
+    { src: galLiving, label: "Living Room", sub: "Spacious common areas for relaxation and socializing.", className: "" },
     { src: galCare, label: "Personal Care Support", sub: "Dedicated staff providing daily living assistance.", className: "" },
     { src: aboutCommunity, label: "Our Community", sub: "Empowering individuals with disabilities to live joyful, independent lives.", className: "" },
   ];
@@ -430,22 +431,40 @@ function Gallery() {
     <section id="gallery" className="bg-secondary/40 py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeading eyebrow="Photo Gallery" title="Step inside our home." sub="Clean, comfortable, and thoughtfully maintained spaces ready to welcome you." />
-        <div className="mt-14 grid gap-5 lg:grid-cols-3 lg:auto-rows-[280px]">
-          {photos.map((p, i) => (
-            <motion.div
-              key={p.label}
-              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-              transition={{ delay: i * 0.1 }}
-              className={`gallery-card group relative overflow-hidden rounded-2xl shadow-elegant ${p.className}`}
-            >
-              <img src={p.src} alt={p.label} loading="lazy" className="gallery-img h-full w-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent opacity-90" />
-              <div className="absolute bottom-0 left-0 p-6">
-                <h3 className="font-display text-2xl font-bold text-white">{p.label}</h3>
-                <p className="mt-1 text-sm text-white/80">{p.sub}</p>
-              </div>
-            </motion.div>
-          ))}
+        <div className="mt-14 flex flex-col lg:flex-row lg:items-stretch gap-5 lg:h-[640px]">
+          {/* Left: Photo Grid */}
+          <div className="flex-1 grid grid-cols-2 gap-5 auto-rows-[200px] lg:auto-rows-[calc((640px-2*20px)/3)]">
+            {photos.map((p, i) => (
+              <motion.div
+                key={p.label}
+                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+                transition={{ delay: i * 0.1 }}
+                className={`gallery-card group relative overflow-hidden rounded-2xl shadow-elegant ${p.className}`}
+              >
+                <img src={p.src} alt={p.label} loading="lazy" className="gallery-img h-full w-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent opacity-90" />
+                <div className="absolute bottom-0 left-0 p-5">
+                  <h3 className="font-display text-xl font-bold text-white">{p.label}</h3>
+                  <p className="mt-1 text-sm text-white/80">{p.sub}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          {/* Right: Video */}
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+            transition={{ delay: 0.4 }}
+            className="lg:w-[38%] rounded-2xl overflow-hidden shadow-elegant min-h-[420px] lg:min-h-0 lg:h-full"
+          >
+            <video
+              src={galleryVideo}
+              className="h-full w-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+          </motion.div>
         </div>
       </div>
     </section>
